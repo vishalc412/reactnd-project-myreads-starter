@@ -1,0 +1,38 @@
+{getCRBooks.map((book) => (
+    <li key={book.id} className='contact-list-item'>
+      <div className='contact-avatar' style={{
+        backgroundImage: `url(${contact.avatarURL})`
+      }}/>
+      <div className='contact-details'>
+        <p>{contact.name}</p>
+        <p>{contact.email}</p>
+      </div>
+      <button onClick={() => onDeleteContact(contact)} className='contact-remove'>
+        Remove
+      </button>
+    </li>
+  ))}
+
+
+  {getCRBooks.map((book) => (
+  <li>
+  <div className="book">
+    <div className="book-top">
+   <div className="book-cover" style={{
+        backgroundImage: `url(${book.thumbnail})`
+      }}></div>
+      <div className="book-shelf-changer">
+        <select>
+          <option value="move" disabled>Move to...</option>
+          <option value="currentlyReading">Currently Reading</option>
+          <option value="wantToRead">Want to Read</option>
+          <option value="read">Read</option>
+          <option value="none">None</option>
+        </select>
+      </div>
+    </div>
+    <div className="book-title">{book.title}</div>
+    <div className="book-authors">{book.authors}</div>
+  </div>
+</li>
+))}
